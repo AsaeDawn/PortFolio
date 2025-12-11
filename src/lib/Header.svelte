@@ -21,7 +21,7 @@
 
 <header class="header">
   <div class="left">Resume</div>
-  <div class="middle">Suryansh maurya</div>
+  <div class="middle">Suryansh Maurya</div>
 
   <div class="right">
     <!-- Download Button -->
