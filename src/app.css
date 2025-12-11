@@ -1,0 +1,30 @@
+:root {
+  --bg: #000;
+  --text: #eee;
+  --muted: #999;
+  --accent: #ff76e1;
+}
+
+[data-theme='light'] {
+  --bg: #fff;
+  --text: #111;
+  --muted: #555;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+.section {
+  padding: 0.4rem 1.2rem;
+}
