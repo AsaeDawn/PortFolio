@@ -108,7 +108,13 @@
   <h2>Projects</h2>
 
   <div class="exp-row">
-    <h4>Doc Inspec Software - RAG-based AI Application</h4>
+    <h4>
+    Doc Inspec Software - RAG-based AI Application
+    <a href="https://github.com/AsaeDawn/PainImage" target="_blank">
+      - [CODE]
+    </a>
+    </h4>
+
     <span class="date">2025</span>
   </div>
   <ul>
@@ -118,7 +124,12 @@
   </ul>
 
   <div class="exp-row">
-    <h4>PainImage - Offline AI Image Editor</h4>
+    <h4>
+    PainImage - Offline AI Image Editor
+    <a href="https://github.com/AsaeDawn/PainImage" target="_blank">
+      - [CODE]
+    </a>
+    </h4>
     <span class="date">Work in Progress</span>
 </div>
 <ul>
@@ -141,16 +152,37 @@
 <!-- TECH STACK -->
 <section class="section" transition:fade>
   <h2>Tech Stack</h2>
-  <p>
-  <strong>Languages:</strong> Python • TypeScript • JavaScript • SQL<br>
-  <strong>Frameworks & Libraries:</strong> SvelteKit • React • Node.js • FastAPI • PyTorch • TensorFlow • Scikit-learn • Hugging Face Transformers • LangChain<br>
-  <strong>AI & ML:</strong> LSTM • Prophet • RAG • Vector Databases (FAISS) • Local LLMs • Model Quantization • Computer Vision (OpenCV) • Embedding Models<br>
-  <strong>Data & Backend:</strong> PostgreSQL • Redis • Pandas • NumPy • REST APIs • WebSockets • Microservices Architecture<br>
-  <strong>DevOps & Tools:</strong> Docker • Git • CI/CD • Linux Systems • Containerization & Deployment
-</p>
 
+  <div class="tech-grid">
 
+    <div class="tech-category">
+      <h3>Languages</h3>
+      <p>Python • TypeScript • JavaScript • SQL</p>
+    </div>
+
+    <div class="tech-category">
+      <h3>Frameworks & Libraries</h3>
+      <p>SvelteKit • React • Node.js • FastAPI • PyTorch • TensorFlow • Scikit-learn • Hugging Face Transformers • LangChain</p>
+    </div>
+
+    <div class="tech-category">
+      <h3>AI & ML</h3>
+      <p>LSTM • Prophet • RAG • Vector Databases (FAISS) • Local LLMs • Model Quantization • Computer Vision (OpenCV) • Embedding Models</p>
+    </div>
+
+    <div class="tech-category">
+      <h3>Data & Backend</h3>
+      <p>PostgreSQL • Redis • Pandas • NumPy • REST APIs • WebSockets • Microservices Architecture</p>
+    </div>
+
+    <div class="tech-category">
+      <h3>DevOps & Tools</h3>
+      <p>Docker • Git • CI/CD • Linux Systems • Containerization & Deployment</p>
+    </div>
+
+  </div>
 </section>
+
 
 
 <!-- THANK YOU -->
@@ -230,6 +262,47 @@
   white-space: nowrap;
   opacity: 0.8;
 }
+
+.exp-row h4 a {
+  color: var(--text);       /* keep normal text color */
+  text-decoration: none;    /* remove underline */
+  font-style: italic;       /* make it italic */
+}
+
+.exp-row h4 a:hover {
+  color: var(--accent);     /* optional hover color */
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+  margin-top: 1rem;
+}
+
+.tech-category h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.tech-category p {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+  font-size: 0.97rem;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tech-category h3 {
+    font-size: 1rem;
+  }
+}
+
 
 /* MOBILE SOCIAL ICONS */
 .socials-mobile {
