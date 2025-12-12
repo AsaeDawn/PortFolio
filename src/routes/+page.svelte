@@ -79,7 +79,7 @@
   <h2>Experience</h2>
   
   <div class="exp-row">
-    <h4>Full Stack Developer | DNS Group, Delhi</h4>
+    <h4>AI Full Stack Developer | DNS Group, Delhi</h4>
     <span class="date">Aug’25–Present</span>
   </div>
   <ul>
