@@ -1,6 +1,28 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
+  import { Github, Linkedin, Mail } from "lucide-svelte";
 </script>
+
+
+<!-- MOBILE SOCIAL ICONS -->
+<div class="socials-mobile">
+  <a href="https://github.com/SuryanshMaurya" target="_blank">
+    <Github size="20" />
+  </a>
+
+  <a href="https://in.linkedin.com/in/suryansh-maurya-cse" target="_blank">
+    <Linkedin size="20" />
+  </a>
+
+  <a href="mailto:suryanshmaurya23@gmail.com">
+    <Mail size="20" />
+  </a>
+</div>
+
+
+
+
+
 
 <!-- PROFILE -->
 <section class="section" transition:fade>
@@ -185,6 +207,42 @@
   opacity: 0.8;
 }
 
+/* MOBILE SOCIAL ICONS */
+.socials-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .socials-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    margin-top: 1px; /* Just under fixed header */
+
+
+    padding: 0.5rem 0;
+  }
+
+  .socials-mobile a {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--muted);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text);
+    transition: 0.2s ease;
+  }
+
+  .socials-mobile a:hover {
+    background: var(--muted);
+    color: var(--bg);
+  }
+}
 
 
 </style>

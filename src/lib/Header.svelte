@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Github, Linkedin, Mail } from "lucide-svelte";
+
   /* --------------------------------------------------------
      Theme Initialization + Toggle
   --------------------------------------------------------- */
@@ -21,9 +23,26 @@
 
 <header class="header">
   <div class="left">Resume</div>
+
   <div class="middle">Suryansh Maurya</div>
 
   <div class="right">
+
+    <!-- 🔗 SOCIAL ICONS (Desktop only) -->
+    <div class="socials-desktop">
+      <a href="https://github.com/SuryanshMaurya" target="_blank">
+        <Github size="20" />
+      </a>
+
+      <a href="https://in.linkedin.com/in/suryansh-maurya-cse" target="_blank">
+        <Linkedin size="20" />
+      </a>
+
+      <a href="mailto:suryanshmaurya23@gmail.com.com">
+        <Mail size="20" />
+      </a>
+    </div>
+
     <!-- Download Button -->
     <a class="pdf-link" href="/resume.pdf" download>
       <span class="pdf-text">Download PDF</span>
@@ -88,11 +107,42 @@
   text-align: center;
 }
 
+/* ==========================================================
+   RIGHT SECTION
+   ========================================================== */
 .right {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   flex-shrink: 0;
+}
+
+/* ------------------------- */
+/* SOCIAL ICONS (DESKTOP)   */
+/* ------------------------- */
+.socials-desktop {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.socials-desktop a {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--text);
+  transition: 0.2s ease;
+}
+
+.socials-desktop a:hover {
+  background: var(--muted);
+  color: var(--bg);
 }
 
 /* ==========================================================
@@ -116,7 +166,7 @@ a {
   white-space: nowrap;
 }
 
-/* PDF Button (Desktop state) */
+/* PDF Button */
 .pdf-link {
   display: inline-flex;
   align-items: center;
@@ -134,19 +184,19 @@ a {
   border-color: var(--text);
   color: white;
 }
-
-.pdf-link .pdf-text {
-  display: inline;
-}
-
 .pdf-link .pdf-icon svg {
   vertical-align: middle;
+  margin-top: 1.5px;   /* This is the exact correction needed */
 }
 
 /* ==========================================================
    MOBILE — under 600px
    ========================================================== */
 @media (max-width: 600px) {
+  .socials-desktop {
+    display: none;
+  }
+
   .header {
     padding: 0.7rem 0.9rem;
   }
@@ -155,44 +205,16 @@ a {
     font-size: 1.3rem;
   }
 
-  .left,
-  .right a {
-    font-size: 0.9rem;
-  }
-
-  /* PDF becomes icon-only */
-  .pdf-link .pdf-text {
+  .pdf-text {
     display: none;
   }
 
   .pdf-link {
     padding: 0.25rem 0.45rem;
-    font-size: 0.9rem;
-  }
-
-  .pdf-link .pdf-icon {
-    display: inline;
-    font-size: 1.3rem;
-  }
-
-  /* Theme becomes icon-only */
-  .theme-btn {
-    font-size: 0.9rem;
-    padding: 0.25rem 0.45rem;
   }
 
   .theme-btn .label {
     display: none;
-  }
-
-  /* Match icon sizes between buttons */
-  .pdf-link .pdf-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .theme-btn .icon {
-    font-size: 1.3rem;
   }
 }
 
@@ -200,30 +222,12 @@ a {
    VERY SMALL PHONES — under 400px
    ========================================================== */
 @media (max-width: 400px) {
-  .header {
-    gap: 0.4rem;
-    justify-content: space-between;
-  }
-
-  .middle {
-    font-size: 1.3rem;
-    margin-right: auto;
-    text-align: left;
-  }
-
-  /* Hide "Resume" */
   .left {
     display: none;
   }
 
-  /* Keep icon consistency */
-  .pdf-link .pdf-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .theme-btn .icon {
-    font-size: 1.3rem;
+  .middle {
+    font-size: 1.25rem;
   }
 }
 </style>
