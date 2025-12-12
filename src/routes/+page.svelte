@@ -1,6 +1,15 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { Github, Linkedin, Mail } from "lucide-svelte";
+
+  let showFloating = false;
+
+  // Track scroll position
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      showFloating = window.scrollY > 250; // adjust threshold
+    });
+  }
 </script>
 
 
@@ -19,6 +28,21 @@
   </a>
 </div>
 
+{#if showFloating}
+  <div class="socials-floating">
+    <a href="https://github.com/YOUR_USERNAME">
+      <Github size="18" />
+    </a>
+
+    <a href="https://linkedin.com/in/YOUR_USERNAME">
+      <Linkedin size="18" />
+    </a>
+
+    <a href="mailto:your@email.com">
+      <Mail size="18" />
+    </a>
+  </div>
+{/if}
 
 
 
@@ -241,6 +265,60 @@
   .socials-mobile a:hover {
     background: var(--muted);
     color: var(--bg);
+  }
+}
+/* FLOATING ICONS (mobile only) */
+.socials-floating {
+  position: fixed;
+  right: 12px;
+  bottom: 110px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  z-index: 999;
+
+  /* Smooth fade */
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.socials-floating a {
+  width: 28px;
+  height: 28px;
+
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--text);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: 0.2s ease;
+}
+.socials-floating a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.socials-floating a:hover {
+  background: var(--muted);
+  color: var(--bg);
+}
+
+/* fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Only show floating icons below 600px */
+@media (min-width: 600px) {
+  .socials-floating {
+    display: none;
   }
 }
 
