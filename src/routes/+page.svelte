@@ -80,7 +80,7 @@
   
   <div class="exp-row">
     <h4>AI Full Stack Developer | DNS Group, Delhi</h4>
-    <span class="date">Aug’25–Present</span>
+    <span class="date">Oct’24–Present</span>
   </div>
   <ul>
     <li>Designed and implemented scalable data pipelines to support the development and deployment of the company's AI Agent ecosystem.</li>
